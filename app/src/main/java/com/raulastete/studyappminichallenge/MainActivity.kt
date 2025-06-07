@@ -46,9 +46,7 @@ class MainActivity : ComponentActivity() {
             }
 
             StudyAppMiniChallengeTheme {
-                LessonOverviewScreen(
-                    deviceMode = deviceMode,
-                )
+                WordOfTheDayScreen()
             }
         }
     }

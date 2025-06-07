@@ -18,3 +18,4 @@ val SecondaryBackground = Color(0x30F9E2F3) // Secondary Background
 
 val FirstGradient = Color(0xFF6B74F8)
 val SecondGradient = Color(0xFFFDE5F3)
+val ThirdGradient = Color(0xFFFEF7EE)

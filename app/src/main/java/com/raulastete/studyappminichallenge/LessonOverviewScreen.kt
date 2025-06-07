@@ -111,7 +111,7 @@ fun LessonOverview(
                 text = "Physics Crash Course",
                 textAlign = headerTextAlign,
                 modifier = Modifier.fillMaxWidth(),
-                style = MaterialTheme.typography.displayLarge.copy(color = MaterialTheme.colorScheme.onSurface),
+                style = MaterialTheme.typography.displayMedium.copy(color = MaterialTheme.colorScheme.onSurface),
             )
 
             Spacer(Modifier.height(8.dp))
