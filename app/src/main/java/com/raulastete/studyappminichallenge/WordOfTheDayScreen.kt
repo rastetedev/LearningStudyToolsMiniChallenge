@@ -1,3 +1,8 @@
+/**
+ * This challenge tests your “wordsmanship” in Compose layouting, styling, and TTS basics—no definition
+ * dodging allowed!
+ */
+
 package com.raulastete.studyappminichallenge
 
 import android.speech.tts.TextToSpeech
