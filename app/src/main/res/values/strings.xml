@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">StudyAppMiniChallenge</string>
+    <string name="placeholder_main_body">The Physics Crash Course offers a foundational overview of essential concepts, teaching learners to understand Newton’s three laws of motion, explain the principle of energy conservation, distinguish between kinetic and potential energy with real-world examples, solve basic problems involving force and mass, and apply the concept of momentum in everyday situations.</string>
+</resources>
