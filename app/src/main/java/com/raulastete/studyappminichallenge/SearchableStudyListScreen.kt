@@ -240,7 +240,7 @@ fun CourseItem(modifier: Modifier = Modifier, studyTopic: StudyTopic) {
                 studyTopic.categories.forEach {
 
                     val categoryColor =
-                        remember { categoryColorMap[it] ?: chipCategoryColors.first() }
+                        remember { categoryColorMap[it] ?: categoriesColor.first() }
 
                     CategoryChip(
                         text = it,

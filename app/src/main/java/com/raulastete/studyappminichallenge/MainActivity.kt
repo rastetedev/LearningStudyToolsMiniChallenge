@@ -46,7 +46,9 @@ class MainActivity : ComponentActivity() {
             }
 
             StudyAppMiniChallengeTheme {
-                SearchableStudyListScreen()
+                StudyFeedSwitcherScreen(
+                    deviceMode = deviceMode
+                )
             }
         }
     }
