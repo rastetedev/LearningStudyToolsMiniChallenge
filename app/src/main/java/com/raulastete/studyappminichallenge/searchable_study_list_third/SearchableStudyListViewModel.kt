@@ -1,4 +1,4 @@
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.searchable_study_list_third
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

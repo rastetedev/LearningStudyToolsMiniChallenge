@@ -3,7 +3,7 @@
  * dodging allowed!
  */
 
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.word_of_the_day_second
 
 import android.speech.tts.TextToSpeech
 import android.util.Log
@@ -36,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
+import com.raulastete.studyappminichallenge.R
 import com.raulastete.studyappminichallenge.ui.theme.FirstGradient
 import com.raulastete.studyappminichallenge.ui.theme.SecondGradient
 import com.raulastete.studyappminichallenge.ui.theme.ThirdGradient
@@ -62,7 +63,7 @@ fun WordOfTheDayScreen() {
         }
     }
 
-    val wordRandomly = remember { wordList.random() }
+    val wordRandomly = remember { wordDefinitionList.random() }
 
     ConstraintLayout(
         modifier = Modifier

@@ -3,7 +3,7 @@
  * This challenge tests your ability to stretch your Compose skills—because great UIs should flex on both phones and tablets!
  **/
 
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.lesson_overview_one
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -46,6 +46,8 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.raulastete.studyappminichallenge.DeviceMode
+import com.raulastete.studyappminichallenge.R
 import com.raulastete.studyappminichallenge.ui.theme.BackgroundGreen
 import com.raulastete.studyappminichallenge.ui.theme.BackgroundPurple
 import com.raulastete.studyappminichallenge.ui.theme.FirstGradient

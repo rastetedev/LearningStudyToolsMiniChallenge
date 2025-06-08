@@ -1,6 +1,6 @@
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.word_of_the_day_second
 
-val wordList = listOf(
+val wordDefinitionList = listOf(
     WordDefinition("Photosynthesis", "The process by which green plants use sunlight to make their own food."),
     WordDefinition("Democracy", "A system of government in which power is held by the people, typically through elected representatives."),
     WordDefinition("Atom", "The smallest unit of matter that retains the properties of an element."),

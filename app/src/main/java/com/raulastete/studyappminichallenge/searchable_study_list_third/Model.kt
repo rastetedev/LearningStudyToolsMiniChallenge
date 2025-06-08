@@ -1,4 +1,4 @@
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.searchable_study_list_third
 
 import androidx.compose.ui.graphics.Color
 import com.raulastete.studyappminichallenge.ui.theme.BackgroundGreen
@@ -11,16 +11,6 @@ import com.raulastete.studyappminichallenge.ui.theme.MainOrange
 import com.raulastete.studyappminichallenge.ui.theme.MainPink
 import com.raulastete.studyappminichallenge.ui.theme.MainPurple
 import com.raulastete.studyappminichallenge.ui.theme.MainTeal
-
-data class StudyTopic(
-    val topic: String,
-    val categories: List<String>
-)
-
-data class CategoryColor(
-    val mainColor: Color,
-    val backgroundColor: Color
-)
 
 val studyTopics = listOf(
     StudyTopic("Photosynthesis", listOf("Biology", "Environmental Science")),
@@ -80,3 +70,12 @@ val categoryColorMap = mapOf(
     "Science" to categoriesColor[3]
 )
 
+data class StudyTopic(
+    val topic: String,
+    val categories: List<String>
+)
+
+data class CategoryColor(
+    val mainColor: Color,
+    val backgroundColor: Color
+)

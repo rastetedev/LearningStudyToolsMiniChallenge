@@ -1,4 +1,4 @@
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.study_feed_switcher_fourth
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -39,6 +39,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.raulastete.studyappminichallenge.DeviceMode
 import com.raulastete.studyappminichallenge.ui.theme.White
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest

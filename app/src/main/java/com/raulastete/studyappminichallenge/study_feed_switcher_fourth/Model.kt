@@ -1,14 +1,7 @@
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.study_feed_switcher_fourth
 
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-
-data class QuickLesson(
-    val title: String,
-    val description: String,
-    val subject: String,
-    val gradient: Brush
-)
 
 val quickLessons = listOf(
     QuickLesson(
@@ -99,4 +92,11 @@ val quickLessons = listOf(
             )
         )
     )
+)
+
+data class QuickLesson(
+    val title: String,
+    val description: String,
+    val subject: String,
+    val gradient: Brush
 )

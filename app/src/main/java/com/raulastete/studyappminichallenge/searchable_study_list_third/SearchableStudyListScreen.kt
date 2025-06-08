@@ -3,7 +3,7 @@
 * and watch them line up to impress you. Just don’t ghost your state management.
 */
 
-package com.raulastete.studyappminichallenge
+package com.raulastete.studyappminichallenge.searchable_study_list_third
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.LinearEasing
@@ -54,6 +54,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.raulastete.studyappminichallenge.R
+import com.raulastete.studyappminichallenge.lesson_overview_one.CategoryChip
 import com.raulastete.studyappminichallenge.ui.theme.CardShadow
 import com.raulastete.studyappminichallenge.ui.theme.FirstGradient
 import com.raulastete.studyappminichallenge.ui.theme.SecondGradient
