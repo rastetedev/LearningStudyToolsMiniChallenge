@@ -11,6 +11,10 @@ import androidx.compose.material3.windowsizeclass.WindowHeightSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.platform.LocalConfiguration
+import com.raulastete.studyappminichallenge.scrollable_study_board_fifth.CourseDetailsScreen
+import com.raulastete.studyappminichallenge.scrollable_study_board_fifth.LessonTopic
+import com.raulastete.studyappminichallenge.scrollable_study_board_fifth.ScrollableStudyBoardScreen
+import com.raulastete.studyappminichallenge.scrollable_study_board_fifth.ScrollableStudyGraph
 import com.raulastete.studyappminichallenge.study_feed_switcher_fourth.StudyFeedSwitcherScreen
 import com.raulastete.studyappminichallenge.ui.theme.StudyAppMiniChallengeTheme
 
@@ -47,9 +51,7 @@ class MainActivity : ComponentActivity() {
             }
 
             StudyAppMiniChallengeTheme {
-                StudyFeedSwitcherScreen(
-                    deviceMode = deviceMode
-                )
+                ScrollableStudyGraph()
             }
         }
     }

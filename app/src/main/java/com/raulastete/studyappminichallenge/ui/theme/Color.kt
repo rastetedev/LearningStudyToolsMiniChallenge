@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 val MainPurple = Color(0xFF6B74F8)
 val BackgroundPurple = Color(0xFFEFEFFC)
 val SecondaryPurple = Color(0xFF9296D1)
+val TertiaryPurple = Color(0xFFE9E8FC)
 val MainGreen = Color(0xFF03A564)
 val BackgroundGreen = Color(0xFFE5FBF2)
 val MainTeal = Color(0xFF07A8A2)
@@ -25,3 +26,4 @@ val SecondGradient = Color(0xFFFDE5F3)
 val ThirdGradient = Color(0x0FFEF7EE)
 
 val CardShadow = Color(0x13182C08)
+val StrokeColor = Color(0xFF9FA3AF)

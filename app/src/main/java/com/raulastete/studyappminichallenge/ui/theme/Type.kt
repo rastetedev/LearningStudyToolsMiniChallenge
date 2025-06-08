@@ -33,6 +33,13 @@ val Typography = Typography(
         lineHeight = 40.sp
     ),
 
+    displaySmall = TextStyle(
+        fontFamily = poltawskinowyFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 22.sp,
+        lineHeight = 28.sp
+    ),
+
     //Card Defintion
     titleSmall = TextStyle(
         fontFamily = montserratFamily,
