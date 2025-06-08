@@ -1,3 +1,8 @@
+/**
+ * Pure UI challenge
+ * This challenge tests your ability to stretch your Compose skills—because great UIs should flex on both phones and tablets!
+ **/
+
 package com.raulastete.studyappminichallenge
 
 import androidx.compose.foundation.Image
@@ -32,6 +37,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -46,6 +52,8 @@ import com.raulastete.studyappminichallenge.ui.theme.FirstGradient
 import com.raulastete.studyappminichallenge.ui.theme.MainGreen
 import com.raulastete.studyappminichallenge.ui.theme.MainPurple
 import com.raulastete.studyappminichallenge.ui.theme.SecondGradient
+import com.raulastete.studyappminichallenge.ui.theme.ThirdGradient
+import com.raulastete.studyappminichallenge.ui.theme.White
 
 @Composable
 fun LessonOverviewScreen(
@@ -129,8 +137,16 @@ fun LessonOverview(
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 LevelChip()
-                CategoryChip(text = "Science")
-                CategoryChip(text = "Physics")
+                CategoryChip(
+                    text = "Science",
+                    colorContainer = BackgroundGreen,
+                    textColor = MainGreen
+                )
+                CategoryChip(
+                    text = "Physics",
+                    colorContainer = BackgroundGreen,
+                    textColor = MainGreen
+                )
                 TimerChip(text = "15 mins")
             }
         }
@@ -191,10 +207,10 @@ fun LevelChip() {
 }
 
 @Composable
-fun CategoryChip(text: String) {
+fun CategoryChip(text: String, colorContainer: Color, textColor: Color) {
     Row(
         Modifier
-            .background(color = BackgroundGreen, CircleShape)
+            .background(color = colorContainer, CircleShape)
             .clip(CircleShape)
             .padding(vertical = 4.dp, horizontal = 12.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -202,7 +218,7 @@ fun CategoryChip(text: String) {
         Text(
             text,
             style = MaterialTheme.typography.labelSmall,
-            color = MainGreen
+            color = textColor
         )
     }
 }
@@ -277,7 +293,9 @@ fun TeacherCard(padding: PaddingValues, imageSize: Dp) {
                     brush = Brush.verticalGradient(
                         colors = listOf(
                             FirstGradient,
-                            SecondGradient
+                            SecondGradient,
+                            ThirdGradient,
+                            White
                         )
                     )
                 )

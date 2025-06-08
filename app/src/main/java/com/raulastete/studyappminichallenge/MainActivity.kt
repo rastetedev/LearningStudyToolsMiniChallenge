@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
             }
 
             StudyAppMiniChallengeTheme {
-                WordOfTheDayScreen()
+                SearchableStudyListScreen()
             }
         }
     }
