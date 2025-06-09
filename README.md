@@ -1,4 +1,4 @@
-# 🎨 Challenge Set - May 2025 - Learning & Study Tools
+# 👩🏻‍💻📓✍🏻💡 Challenge Set - May 2025 - Learning & Study Tools
 
 Part of the **Mobile Dev Campus Main App Challenge** by [Philipp Lackner](https://pl-coding.com/campus)
 
