@@ -32,7 +32,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -48,6 +47,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -56,12 +56,18 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.raulastete.studyappminichallenge.R
 import com.raulastete.studyappminichallenge.lesson_overview_one.CategoryChip
+import com.raulastete.studyappminichallenge.ui.theme.Black
+import com.raulastete.studyappminichallenge.ui.theme.BlackVariant
 import com.raulastete.studyappminichallenge.ui.theme.CardShadow
 import com.raulastete.studyappminichallenge.ui.theme.FirstGradient
+import com.raulastete.studyappminichallenge.ui.theme.MainPurple
 import com.raulastete.studyappminichallenge.ui.theme.SecondGradient
+import com.raulastete.studyappminichallenge.ui.theme.SecondaryPurple
 import com.raulastete.studyappminichallenge.ui.theme.TertiaryBackground
 import com.raulastete.studyappminichallenge.ui.theme.ThirdGradient
 import com.raulastete.studyappminichallenge.ui.theme.White
+import com.raulastete.studyappminichallenge.ui.theme.montserratFamily
+import com.raulastete.studyappminichallenge.ui.theme.poltawskinowyFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,7 +81,7 @@ fun SearchableStudyListScreen(
     var searchInputIsFocus by remember { mutableStateOf(false) }
     var searchContainerBorder = animateColorAsState(
         targetValue = if (searchInputIsFocus) {
-            MaterialTheme.colorScheme.primary
+            MainPurple
         } else {
             Color.Transparent
         },
@@ -85,7 +91,7 @@ fun SearchableStudyListScreen(
 
     var searchContainerBackground = animateColorAsState(
         targetValue = if (searchInputIsFocus) {
-            MaterialTheme.colorScheme.surface
+            White
         } else {
             TertiaryBackground
         },
@@ -113,7 +119,7 @@ fun SearchableStudyListScreen(
         ) {
             Column(
                 Modifier
-                    .background(MaterialTheme.colorScheme.surface)
+                    .background(White)
                     .fillMaxWidth()
                     .padding(
                         bottom = 12.dp,
@@ -125,12 +131,11 @@ fun SearchableStudyListScreen(
                 Text(
                     text = "Study Topics",
                     modifier = Modifier.fillMaxWidth(),
-                    style = MaterialTheme.typography.titleSmall.copy(
-                        fontSize = 22.sp,
-                        lineHeight = 32.sp,
-                        fontWeight = FontWeight.W600,
-                        color = MaterialTheme.colorScheme.onSurface
-                    ),
+                    fontFamily = montserratFamily,
+                    fontSize = 22.sp,
+                    lineHeight = 32.sp,
+                    fontWeight = FontWeight.W600,
+                    color = Black,
                     textAlign = TextAlign.Center
                 )
 
@@ -155,7 +160,9 @@ fun SearchableStudyListScreen(
                         .onFocusChanged {
                             searchInputIsFocus = it.isFocused
                         },
-                    textStyle = MaterialTheme.typography.bodyMedium.copy(
+                    textStyle = TextStyle(
+                        fontFamily = montserratFamily,
+                        fontWeight = FontWeight.Normal,
                         fontSize = 16.sp,
                         lineHeight = 24.sp
                     ),
@@ -168,16 +175,17 @@ fun SearchableStudyListScreen(
                             Icon(
                                 ImageVector.vectorResource(R.drawable.search_icon),
                                 contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
+                                tint = BlackVariant.copy(alpha = 0.5f),
                             )
                             Box(Modifier.weight(1f)) {
                                 if (searchState.isEmpty() && !searchInputIsFocus) {
                                     Text(
                                         text = "Search by topic or subject",
-                                        style = MaterialTheme.typography.labelMedium.copy(
-                                            fontWeight = FontWeight.Normal
-                                        ),
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        fontFamily = montserratFamily,
+                                        fontWeight = FontWeight.Normal,
+                                        fontSize = 17.sp,
+                                        lineHeight = 24.sp,
+                                        color = BlackVariant,
                                         modifier = Modifier.fillMaxWidth()
                                     )
                                 }
@@ -193,7 +201,7 @@ fun SearchableStudyListScreen(
                     .padding(start = 20.dp, end = 20.dp, top = 20.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                if(studyTopics.isNotEmpty()){
+                if (studyTopics.isNotEmpty()) {
                     items(studyTopics, key = { it.topic }) { studyTopic ->
                         CourseItem(
                             modifier = Modifier
@@ -205,11 +213,9 @@ fun SearchableStudyListScreen(
                     item {
                         Text(
                             text = "No results found, try searching again! ",
-                            style = MaterialTheme.typography.bodyLarge.copy(
-                                fontSize = 15.sp,
-                                lineHeight = 24.sp,
-                                color = MaterialTheme.colorScheme.tertiary
-                            ),
+                            fontFamily = montserratFamily,
+                            fontWeight = FontWeight.SemiBold,
+                            color = SecondaryPurple,
                             modifier = Modifier.fillMaxWidth(),
                             textAlign = TextAlign.Center
                         )
@@ -234,7 +240,7 @@ fun CourseItem(modifier: Modifier = Modifier, studyTopic: StudyTopic) {
         ),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = White
         )
     ) {
         Column(Modifier.padding(16.dp)) {
@@ -254,11 +260,11 @@ fun CourseItem(modifier: Modifier = Modifier, studyTopic: StudyTopic) {
             Spacer(Modifier.height(10.dp))
             Text(
                 text = studyTopic.topic,
-                style = MaterialTheme.typography.displayLarge.copy(
-                    fontSize = 22.sp,
-                    lineHeight = 28.sp,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
+                fontFamily = poltawskinowyFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 22.sp,
+                lineHeight = 28.sp,
+                color = Black
             )
         }
     }

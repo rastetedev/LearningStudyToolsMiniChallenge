@@ -22,7 +22,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -32,14 +31,22 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.raulastete.studyappminichallenge.R
+import com.raulastete.studyappminichallenge.ui.theme.Black
+import com.raulastete.studyappminichallenge.ui.theme.BlackVariant
 import com.raulastete.studyappminichallenge.ui.theme.FirstGradient
+import com.raulastete.studyappminichallenge.ui.theme.MainPurple
 import com.raulastete.studyappminichallenge.ui.theme.SecondGradient
 import com.raulastete.studyappminichallenge.ui.theme.ThirdGradient
+import com.raulastete.studyappminichallenge.ui.theme.White
+import com.raulastete.studyappminichallenge.ui.theme.montserratFamily
+import com.raulastete.studyappminichallenge.ui.theme.poltawskinowyFamily
 import kotlin.random.Random
 
 @Composable
@@ -90,7 +97,7 @@ fun WordOfTheDayScreen() {
             },
             shape = RoundedCornerShape(20.dp),
             colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surface
+                containerColor = White
             )
         ) {
             Column(
@@ -100,16 +107,22 @@ fun WordOfTheDayScreen() {
                 Text(
                     text = wordRandomly.word,
                     modifier = Modifier.fillMaxWidth(),
-                    style = MaterialTheme.typography.displayLarge,
+                    fontFamily = poltawskinowyFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 38.sp,
+                    lineHeight = 40.sp,
                     textAlign = TextAlign.Center,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = Black
                 )
                 Spacer(Modifier.height(12.dp))
                 Text(
                     text = wordRandomly.definition,
-                    style = MaterialTheme.typography.titleSmall,
+                    fontFamily = montserratFamily,
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 19.sp,
+                    lineHeight = 24.sp,
                     textAlign = TextAlign.Center,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = BlackVariant
 
                 )
             }
@@ -129,8 +142,8 @@ fun WordOfTheDayScreen() {
                     start.linkTo(wordCard.start)
                 },
             colors = IconButtonDefaults.iconButtonColors(
-                containerColor = MaterialTheme.colorScheme.primary,
-                contentColor = MaterialTheme.colorScheme.onPrimary
+                containerColor = MainPurple,
+                contentColor = White
             )
         ) {
             Icon(

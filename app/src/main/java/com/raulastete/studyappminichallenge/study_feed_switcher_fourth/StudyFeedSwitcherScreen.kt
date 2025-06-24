@@ -22,7 +22,6 @@ import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -41,6 +40,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.raulastete.studyappminichallenge.DeviceMode
 import com.raulastete.studyappminichallenge.ui.theme.White
+import com.raulastete.studyappminichallenge.ui.theme.montserratFamily
+import com.raulastete.studyappminichallenge.ui.theme.poltawskinowyFamily
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 
@@ -198,10 +199,11 @@ fun ColumnScope.MainContent(quickLesson: QuickLesson, showHint: Boolean, isLands
     ) {
         Text(
             text = "Swipe to see more",
-            style = MaterialTheme.typography.titleSmall.copy(
-                fontWeight = FontWeight.Medium,
-                color = White
-            ),
+            fontFamily = montserratFamily,
+            fontSize = 19.sp,
+            lineHeight = 24.sp,
+            color = White,
+            fontWeight = FontWeight.Medium
         )
     }
 
@@ -221,14 +223,22 @@ fun StudyInformation(quickLesson: QuickLesson) {
 
         Text(
             text = quickLesson.title,
-            style = MaterialTheme.typography.displayLarge.copy(color = White)
+            fontFamily = poltawskinowyFamily,
+            fontWeight = FontWeight.Bold,
+            fontSize = 38.sp,
+            lineHeight = 40.sp,
+            color = White
         )
 
         Spacer(Modifier.height(8.dp))
 
         Text(
             text = quickLesson.description,
-            style = MaterialTheme.typography.titleSmall.copy(color = White)
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 19.sp,
+            lineHeight = 24.sp,
+            color = White
         )
     }
 }
@@ -244,10 +254,10 @@ fun SubjectChip(text: String) {
     ) {
         Text(
             text,
-            style = MaterialTheme.typography.bodyLarge.copy(
-                fontSize = 15.sp,
-                lineHeight = 24.sp,
-            ),
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 15.sp,
+            lineHeight = 24.sp,
             color = White
         )
     }

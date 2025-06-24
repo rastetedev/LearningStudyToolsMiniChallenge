@@ -33,7 +33,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarDuration
@@ -69,10 +68,14 @@ import androidx.navigation.toRoute
 import com.raulastete.studyappminichallenge.R
 import com.raulastete.studyappminichallenge.lesson_overview_one.CategoryChip
 import com.raulastete.studyappminichallenge.searchable_study_list_third.categoriesColor
+import com.raulastete.studyappminichallenge.ui.theme.Black
+import com.raulastete.studyappminichallenge.ui.theme.MainPurple
 import com.raulastete.studyappminichallenge.ui.theme.SecondaryPurple
 import com.raulastete.studyappminichallenge.ui.theme.StrokeColor
 import com.raulastete.studyappminichallenge.ui.theme.TertiaryPurple
 import com.raulastete.studyappminichallenge.ui.theme.White
+import com.raulastete.studyappminichallenge.ui.theme.montserratFamily
+import com.raulastete.studyappminichallenge.ui.theme.poltawskinowyFamily
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -220,9 +223,9 @@ fun ScrollableStudyBoardScreen(
                     Snackbar(
                         snackbarData = snackbarData,
                         shape = RoundedCornerShape(16.dp),
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        contentColor = MaterialTheme.colorScheme.onPrimary,
-                        dismissActionContentColor = MaterialTheme.colorScheme.surfaceVariant
+                        containerColor = MainPurple,
+                        contentColor = White,
+                        dismissActionContentColor = White
                     )
                 },
             )
@@ -314,10 +317,11 @@ fun ScrollableStudyBoardScreen(
                                     modifier = Modifier
                                         .padding(vertical = 12.dp),
                                     text = subject.uppercase(),
-                                    style = MaterialTheme.typography.labelSmall.copy(
-                                        fontWeight = FontWeight.SemiBold,
-                                        color = SecondaryPurple
-                                    )
+                                    fontFamily = montserratFamily,
+                                    fontSize = 15.sp,
+                                    lineHeight = 24.sp,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = SecondaryPurple
                                 )
                             }
                         }
@@ -389,7 +393,7 @@ fun FabButton(
         Icon(
             imageVector = ImageVector.vectorResource(R.drawable.arrow_up_icon),
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary
+            tint = MainPurple
         )
     }
 }
@@ -404,8 +408,11 @@ fun SubjectChipScrollable(text: String, onClick: () -> Unit) {
         Text(
             modifier = Modifier.padding(vertical = 4.dp, horizontal = 12.dp),
             text = text,
-            style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onSurface
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Medium,
+            fontSize = 17.sp,
+            lineHeight = 24.sp,
+            color = Black
         )
     }
 }
@@ -422,11 +429,11 @@ fun LessonTopicCard(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
+            containerColor = White,
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = if (isPinned) MaterialTheme.colorScheme.primary else Transparent
+            color = if (isPinned) MainPurple else Transparent
         )
     ) {
         Row(
@@ -436,14 +443,17 @@ fun LessonTopicCard(
             Text(
                 text = lessonTopic.title,
                 modifier = Modifier.weight(0.8f),
-                style = MaterialTheme.typography.displaySmall
+                fontFamily = poltawskinowyFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 22.sp,
+                lineHeight = 28.sp
             )
 
             IconButton(
                 onClick = onPinClick,
                 colors = IconButtonDefaults.iconButtonColors(
                     containerColor = if (isPinned) TertiaryPurple
-                    else MaterialTheme.colorScheme.surface
+                    else White
                 )
             ) {
                 Icon(
@@ -452,7 +462,7 @@ fun LessonTopicCard(
                         else R.drawable.pin_inactive_icon
                     ),
                     contentDescription = null,
-                    tint = if (isPinned) MaterialTheme.colorScheme.primary
+                    tint = if (isPinned) MainPurple
                     else StrokeColor
                 )
             }
@@ -469,13 +479,17 @@ fun CourseDetailsScreen(
     val chipColor = categoriesColor.random()
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.surface,
+        containerColor = White,
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
                     Text(
                         "Course Details",
-                        style = MaterialTheme.typography.labelSmall.copy(color = White)
+                        fontFamily = montserratFamily,
+                        fontWeight = FontWeight.Medium,
+                        fontSize = 15.sp,
+                        lineHeight = 24.sp,
+                        color = White
                     )
                 },
                 navigationIcon = {
@@ -488,7 +502,7 @@ fun CourseDetailsScreen(
                     }
                 },
                 colors = TopAppBarDefaults.largeTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary
+                    containerColor = MainPurple
                 )
             )
         },
@@ -503,10 +517,10 @@ fun CourseDetailsScreen(
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     text = lessonTopic.title,
-                    style = MaterialTheme.typography.displayLarge.copy(
-                        fontSize = 32.sp,
-                        lineHeight = 36.sp
-                    )
+                    fontFamily = poltawskinowyFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 32.sp,
+                    lineHeight = 36.sp
                 )
                 Spacer(Modifier.height(12.dp))
 

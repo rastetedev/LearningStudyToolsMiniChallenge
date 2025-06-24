@@ -30,7 +30,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -43,19 +42,27 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.raulastete.studyappminichallenge.DeviceMode
 import com.raulastete.studyappminichallenge.R
 import com.raulastete.studyappminichallenge.ui.theme.BackgroundGreen
 import com.raulastete.studyappminichallenge.ui.theme.BackgroundPurple
+import com.raulastete.studyappminichallenge.ui.theme.Black
+import com.raulastete.studyappminichallenge.ui.theme.BlackVariant
 import com.raulastete.studyappminichallenge.ui.theme.FirstGradient
+import com.raulastete.studyappminichallenge.ui.theme.Gray
 import com.raulastete.studyappminichallenge.ui.theme.MainGreen
 import com.raulastete.studyappminichallenge.ui.theme.MainPurple
 import com.raulastete.studyappminichallenge.ui.theme.SecondGradient
+import com.raulastete.studyappminichallenge.ui.theme.SecondaryBackground
 import com.raulastete.studyappminichallenge.ui.theme.ThirdGradient
 import com.raulastete.studyappminichallenge.ui.theme.White
+import com.raulastete.studyappminichallenge.ui.theme.montserratFamily
+import com.raulastete.studyappminichallenge.ui.theme.poltawskinowyFamily
 
 @Composable
 fun LessonOverviewScreen(
@@ -87,7 +94,7 @@ fun LessonOverviewScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = MaterialTheme.colorScheme.primary)
+            .background(color = MainPurple)
             .padding(top = WindowInsets.statusBars.asPaddingValues().calculateTopPadding() + 8.dp)
     ) {
 
@@ -110,7 +117,7 @@ fun LessonOverview(
         Modifier
             .fillMaxSize()
             .background(
-                MaterialTheme.colorScheme.surface,
+                White,
                 shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
             )
             .verticalScroll(rememberScrollState())
@@ -121,7 +128,11 @@ fun LessonOverview(
                 text = "Physics Crash Course",
                 textAlign = headerTextAlign,
                 modifier = Modifier.fillMaxWidth(),
-                style = MaterialTheme.typography.displayMedium.copy(color = MaterialTheme.colorScheme.onSurface),
+                fontFamily = poltawskinowyFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 36.sp,
+                lineHeight = 40.sp,
+                color = Black
             )
 
             Spacer(Modifier.height(8.dp))
@@ -129,7 +140,11 @@ fun LessonOverview(
             Text(
                 stringResource(R.string.placeholder_main_body),
                 textAlign = headerTextAlign,
-                style = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.onSurfaceVariant),
+                fontFamily = montserratFamily,
+                fontWeight = FontWeight.Normal,
+                fontSize = 15.sp,
+                lineHeight = 24.sp,
+                color = BlackVariant
             )
 
             Spacer(Modifier.height(16.dp))
@@ -156,14 +171,18 @@ fun LessonOverview(
         Spacer(Modifier.height(24.dp))
 
         HorizontalDivider(
-            color = MaterialTheme.colorScheme.onBackground
+            color = Gray
         )
 
         Spacer(Modifier.height(24.dp))
 
         Text(
             "What youʼll learn:",
-            style = MaterialTheme.typography.bodyLarge.copy(color = MaterialTheme.colorScheme.onSurface)
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 18.sp,
+            lineHeight = 26.sp,
+            color = Black
         )
 
         Spacer(Modifier.height(12.dp))
@@ -202,7 +221,10 @@ fun LevelChip() {
         )
         Text(
             "Intermediate",
-            style = MaterialTheme.typography.labelMedium,
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Medium,
+            fontSize = 17.sp,
+            lineHeight = 24.sp,
             color = MainPurple
         )
     }
@@ -219,7 +241,10 @@ fun CategoryChip(text: String, colorContainer: Color, textColor: Color) {
     ) {
         Text(
             text,
-            style = MaterialTheme.typography.labelSmall,
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Medium,
+            fontSize = 15.sp,
+            lineHeight = 24.sp,
             color = textColor
         )
     }
@@ -229,10 +254,10 @@ fun CategoryChip(text: String, colorContainer: Color, textColor: Color) {
 fun TimerChip(text: String) {
     Row(
         Modifier
-            .background(color = MaterialTheme.colorScheme.surface, CircleShape)
+            .background(color = White, CircleShape)
             .border(
                 width = 1.dp,
-                color = MaterialTheme.colorScheme.onBackground,
+                color = Gray,
                 shape = CircleShape
             )
             .clip(CircleShape)
@@ -247,8 +272,11 @@ fun TimerChip(text: String) {
         )
         Text(
             text,
-            style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Medium,
+            fontSize = 17.sp,
+            lineHeight = 24.sp,
+            color = BlackVariant
         )
     }
 }
@@ -263,12 +291,16 @@ fun TopicItem(text: String) {
             ImageVector.vectorResource(R.drawable.bullet_point_icon),
             modifier = Modifier.padding(top = 4.dp),
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary
+            tint = MainPurple
         )
 
         Text(
             text = text,
-            style = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.onSurface),
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 18.sp,
+            lineHeight = 26.sp,
+            color = Black,
             modifier = Modifier.padding(vertical = 4.dp)
         )
     }
@@ -280,7 +312,7 @@ fun TeacherCard(padding: PaddingValues, imageSize: Dp) {
         Modifier
             .fillMaxWidth()
             .background(
-                color = MaterialTheme.colorScheme.background,
+                color = SecondaryBackground,
                 shape = RoundedCornerShape(0.5f)
             )
             .clip(RoundedCornerShape(0.5f))
@@ -316,7 +348,11 @@ fun TeacherCard(padding: PaddingValues, imageSize: Dp) {
 
         Text(
             "Dr. Eleanor Maxwell",
-            style = MaterialTheme.typography.labelLarge.copy(color = MaterialTheme.colorScheme.onSurface)
+            fontFamily = montserratFamily,
+            fontWeight = FontWeight.Medium,
+            fontSize = 18.sp,
+            lineHeight = 26.sp,
+            color = Black
         )
     }
 }
